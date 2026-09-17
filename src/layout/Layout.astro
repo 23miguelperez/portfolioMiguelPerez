@@ -1,0 +1,42 @@
+---
+import BaseAstro from '../components/BaseAstro.astro';
+import Header from "../components/header/Header.astro";
+// Supports weights 100-900
+import '@fontsource-variable/onest/wght.css';
+import '@fontsource/jetbrains-mono/100.css';
+const { title, description } = Astro.props;
+
+---
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <BaseAstro {title} {description} />
+    </head>
+	<body>
+        <Header/>
+        <slot />
+
+	</body>
+</html>
+
+<style is:global>
+    :root{
+        --primary-color: #1f1f1f;
+        --secondary-color: #4b5563;
+        /*--text-color: #ffffff;*/ /* NO HACE FALTA*/
+        color-scheme: dark; /*MODO OSCURO - TEXTO BLANCO POR DEFECTO*/
+    }
+
+    html{
+        font-family: 'Onest Variable', sans-serif;
+    }
+
+    body{
+        background-color: var(--primary-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+</style>

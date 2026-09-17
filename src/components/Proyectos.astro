@@ -1,0 +1,76 @@
+---
+// 1. LOS DATOS: Tu lista de proyectos (Array de Objetos)
+const PROJECTS = [
+    {
+        title: "Portfolio Web 2026",
+        description: "Mi sitio web personal y portafolio profesional desarrollado para mostrar mis habilidades en preimpresión, desarrollo web y diseño UX/UI.",
+        link: "#",
+        github: "#",
+        image: "../images/portfolioPortada.png", // Usamos la que ya tienes para probar, luego la cambias
+        tags: ["Astro", "Tailwind CSS", "JavaScript", "Figma"]
+    },
+    {
+        title: "Kuantiko Studio - Rediseño Corporativo",
+        description: "Rediseño completo de la interfaz de usuario de la plataforma y maquetación de componentes responsive de alta fidelidad.",
+        link: "#", // Si no tienes enlace, puedes poner un '#' o dejarlo vacío
+        github: "#",
+        image: "../images/portada.png",
+        tags: ["HTML5", "CSS3", "JavaScript", "Figma", "UI/UX"]
+    }
+
+];
+---
+
+<!-- 2. El HTML -->
+<div class="flex flex-col gap-y-16 w-[80%] mx-auto">
+    {
+        // El .map principal viaja por cada proyecto de la lista (PROJECTS)
+        // El 'pasajero' actual se llama 'project'
+        PROJECTS.map((project) => (
+            <article class="flex md:flex-row gap-8 items-center bg-white/5 p-6 rounded-2xl border border-white/10 shadow-xl">
+                
+                <!-- Columna de la Imagen -->
+                <div class="w-full md:w-1/2">
+                    <img 
+                        src={project.image} 
+                        alt={`Captura de pantalla del proyecto ${project.title}`} 
+                        class="w-full h-auto rounded-xl object-cover aspect-video border border-white/10 hover:scale-102 transition duration-300"
+                    />
+                </div>
+
+                <!-- Columna de los Textos -->
+                <div class="w-full md:w-1/2 flex flex-col justify-between">
+                    <h3 class="text-3xl font-bold text-yellow-200 mb-2">{project.title}</h3>
+                    <p class="text-md opacity-70 mb-4 text-pretty" style="font-family: 'JetBrains Mono', monospace;">
+                    {project.description}
+                    </p>
+
+                    <!-- El .map secundario: Mapea la lista interna de tecnologías (tags) -->
+                    <!-- El 'pasajero' actual se llama 'tag' -->
+                    <ul class="flex flex-wrap gap-2 mb-6">
+                        {project.tags.map((tag) => (
+                        <li class="bg-sky-400/10 text-sky-300 border border-sky-400/20 text-xs px-2.5 py-1 rounded-full font-medium">
+                            {tag}
+                        </li>
+                        ))}
+                    </ul>
+
+                    <!-- Botones/Enlaces de acción -->
+                    <div class="flex gap-x-4">
+                        {project.link && (
+                        <a href={project.link} target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-white/20 text-white text-sm px-4 py-2 rounded-lg font-medium transition">
+                            Ver proyecto en vivo
+                        </a>
+                        )}
+                        {project.github && (
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" class="text-white/70 hover:text-white text-sm px-4 py-2 rounded-lg font-medium transition border border-white/10">
+                            Código fuente
+                        </a>
+                        )}
+                    </div>
+                </div>
+
+            </article>
+        ))
+    }
+    </div>

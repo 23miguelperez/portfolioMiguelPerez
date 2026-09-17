@@ -1,0 +1,36 @@
+---
+import "../styles/global.css";
+
+interface Props {
+    title?: string;
+    description?: string;
+}
+
+const { title = "miguelDev  ", description = "Mi portfolio" } = Astro.props;
+
+---
+
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<!--Define la pestaña del navegador con un archivo vectorial (.svg). 
+		Al ser vectorial, el logo de tu pestaña se verá nítido sin importar 
+		la resolución de la pantalla. -->
+
+	<link rel="icon" href="/favicon.ico" />
+		<!-- Es un respaldo (fallback). Si un navegador muy antiguo no entiende 
+		el formato SVG, cargará este archivo clásico .ico para que tu pestaña 
+		no se quede sin logotipo. -->
+
+	<meta name="viewport" content="width=device-width" />
+		<!-- Esta es obligatoria para el diseño responsive -->
+
+	<meta name="generator" content={Astro.generator} />
+		<!-- Es una etiqueta informativa propia de Astro. 
+		Inyecta automáticamente la versión de Astro que estás usando -->
+
+	<meta name="description" content={description} />
+		<!-- resumen de la web.google muestra debajo del titulo.
+		Clave para el SEO. -->
+
+	<title>{title}</title>
+		<!-- Titulo principal que se muestra en la pestaña del navegador. -->

@@ -1,0 +1,36 @@
+---
+import Layout from '../layout/Layout.astro';
+import Experiencia from '../components/Experiencia.astro';
+import Experience from '../components/Experience.astro';
+import Proyectos from '../components/Proyectos.astro';
+---
+
+<Layout title="Miguel Pérez" description="Desarrollador web, Ilustrador y Diseñador creativo UX/UI con amplia experiencia en el sector de las Artes Gráficas con un estilo único que aporta caracter y autenticidad a cada proyecto.">
+    <main id="inicio" class="main shadow flex flex-col items-center justify-center w-full py-30 ">
+        <div class="main-image-container relative w-full">
+            <img src="/public/images/mikiFotobaja.jpg" alt="Miguel Pérez" class="main-image w-[15%] h-[15%] object-cover mx-auto rounded-full" />
+        </div>
+        <div class="container text-center w-[90%] mx-auto py-2">
+            <h1 class="text-6xl font-bold py-4 opacity-90"><span class="text-primary opacity-60">¡Hola, soy </span>Miguel Pérez!</h1>
+            <h4 class="text-xl py-2 opacity-60" style="font-family: 'JetBrains Mono', monospace;"><span class="text-yellow-200">Desarrollador web, Ilustrador y 
+                Diseñador creativo UX/UI</span>,  con amplia experiencia en el sector de las  
+                <span class="text-yellow-200"> Artes Gráficas</span> con un estilo único que aporta caracter y autenticidad a cada proyecto.</h4>
+        </div>
+    </main>
+	
+    <section id="experiencia" >
+        <div class="experiencia-section mx-auto mt-8 p-4 ">
+            <h2 class="text-5xl w-[90%] mx-auto font-bold p-4 opacity-90">Experiencia <span class="text-primary opacity-60">Laboral</span></h2>
+            <Experiencia />
+            <Experience />
+        </div>
+    </section>
+
+    <section id="proyectos" >
+        <div class="proyectos-section mx-auto">
+            <h2 class="text-5xl w-[90%] mx-auto font-bold p-4 my-2 opacity-90">Proyectos <span class="text-primary opacity-60">Destacados</span></h2>
+        <Proyectos />
+        </div>
+    </section>
+</Layout>
+
