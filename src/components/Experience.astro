@@ -1,4 +1,45 @@
 ---
+const EXPERIENCES = [
+    {
+        title: "Departamento de Preimpresión e IT",
+        company: "Monterreina Comunicación",
+        duration: "2024 - 2026",
+        description: ["·Optimización de flujos de trabajo digitales y preparación de archivos complejos para su posterior impresión."]
+    },
+    {
+        title: "Desarrollador Web (Prácticas)",
+        company: "Kuantiko Studio",
+        duration: "2024",
+        description: ["·Diseño UI/UX: Conceptualización y prototipado de la nueva imagen corporativa mediante Figma, creando guías de estilo y componentes reutilizables.",
+            "·Maquetación Responsive de diseños de alta fidelidad a código limpio, utilizando HTML5 y CSS3, garantizando la adaptabilidad total en dispositivos móviles, tablets y desktop.",
+            "·Implementación de funcionalidades dinámicas y lógica de interfaz con JavaScript en entorno Visual Studio Code."
+        ]
+    },
+    {
+        title: "Departamento de Preimpresión e IT",
+        company: "Liber Digital",
+        duration: "2023 - 2021",
+        description: ["·Gestión de activos digitales y automatización de procesos de impresión."]
+    }
+];
 
 ---
+
+<div class="experiencia-container mx-auto">
+    {EXPERIENCES.map((experience) => (
+        <div class="experiencia-item sm:w-[95%] md:w-[80%] mx-auto my-8 px-2">
+            <h3 class="text-3xl py-2 opacity-90">{experience.company} <span class="text-xl opacity-60">{experience.duration}</span></h3>
+
+            <div class="experiencia-item px-2 border-s border-yellow-200">
+                <h4 class="text-2xl  opacity-80">{experience.title}</h4>
+                <div class="text-md flex flex-col gap-y-5 opacity-60 py-2" style="font-family: 'JetBrains Mono', monospace;">
+                    {experience.description.map((desc) => (
+                        <p>{desc}</p>
+                    ))}
+                </div>
+            </div>
+        </div>
+        
+    ))}
+</div>
 

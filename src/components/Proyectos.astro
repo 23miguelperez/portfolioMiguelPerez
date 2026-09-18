@@ -5,7 +5,7 @@ const PROJECTS = [
         title: "Portfolio Web 2026",
         description: "Mi sitio web personal y portafolio profesional desarrollado para mostrar mis habilidades en preimpresión, desarrollo web y diseño UX/UI.",
         link: "#",
-        github: "#",
+        github: "https://github.com/23miguelperez/portfolioMiguelPerez",
         image: "../images/portfolioPortada.png", // Usamos la que ya tienes para probar, luego la cambias
         tags: ["Astro", "Tailwind CSS", "JavaScript", "Figma"]
     },
@@ -14,20 +14,21 @@ const PROJECTS = [
         description: "Rediseño completo de la interfaz de usuario de la plataforma y maquetación de componentes responsive de alta fidelidad.",
         link: "#", // Si no tienes enlace, puedes poner un '#' o dejarlo vacío
         github: "#",
-        image: "../images/portada.png",
+        image: "../images/KuantikoStudio.png", // Usamos la que ya tienes para probar, luego la cambias
         tags: ["HTML5", "CSS3", "JavaScript", "Figma", "UI/UX"]
     }
 
 ];
 ---
 
+
 <!-- 2. El HTML -->
-<div class="flex flex-col gap-y-16 w-[80%] mx-auto">
+<div class="flex flex-col gap-y-16 w-[95%] lg:w-[80%] mx-auto">
     {
         // El .map principal viaja por cada proyecto de la lista (PROJECTS)
         // El 'pasajero' actual se llama 'project'
         PROJECTS.map((project) => (
-            <article class="flex md:flex-row gap-8 items-center bg-white/5 p-6 rounded-2xl border border-white/10 shadow-xl">
+            <article class="flex flex-col md:flex-row gap-8 items-center bg-white/5 p-6 rounded-2xl border border-white/10 shadow-xl">
                 
                 <!-- Columna de la Imagen -->
                 <div class="w-full md:w-1/2">
