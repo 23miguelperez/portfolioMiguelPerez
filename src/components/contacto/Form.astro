@@ -1,0 +1,72 @@
+---
+const CAMPOS = [
+    {
+        id: "name",
+        label: "Nombre y Apellidos",
+        type: "text",
+        placeholder: "John Doe"
+    },
+    {
+        id: "company",
+        label: "Empresa",
+        type: "text",
+        placeholder: "Nombre de la empresa"
+    },
+    {
+        id: "email",
+        label: "Email address",
+        type: "email",
+        placeholder: "john.doe@company.com"
+    },
+    {
+        id: "message",
+        label: "Mensaje",
+        type: "textarea",
+        placeholder: "Cuéntame en qué puedo ayudarte..."
+    }
+] as const
+---
+
+<form class="w-full">
+    <div class="info-item w-full mx-auto my-4 px-4 border border-white/10 rounded-xl p-4">
+        <h3 class="text-3xl opacity-90 py-2">
+            Contactame
+        </h3>
+
+        {CAMPOS.map((campo) => (
+            <div class="my-2">
+                <label for={campo.id} class="block text-lg mb-1">
+                    {campo.label}
+                </label>
+                {campo.type === "textarea" ? (
+                    <textarea
+                        id={campo.id}
+                        class="bg-transparent border border-white/10 text-white text-sm rounded-lg focus:ring-1 focus:ring-yellow-200 focus:border-yellow-200 block w-full px-3 py-2.5 placeholder:text-white/40 outline-none transition duration-300 resize-none"
+                        placeholder={campo.placeholder}
+                        rows="4"
+                        required
+                    ></textarea>
+                ) : (
+                    <input
+                        type={campo.type}
+                        id={campo.id}
+                        class="bg-transparent border border-white/10 text-white text-sm rounded-lg focus:ring-1 focus:ring-yellow-200 focus:border-yellow-200 block w-full px-3 py-2.5 placeholder:text-white/40 outline-none transition duration-300"
+                        placeholder={campo.placeholder}
+                        required
+                    />
+                )}
+            </div>
+        ))}
+
+        <div class="flex justify-end mt-2">
+            <button
+                type="submit"
+                class="hover:bg-yellow-200/10 text-md transition duration-300 
+                border border-yellow-200/40 hover:border-yellow-300 rounded-3xl px-4 py-2"
+                style="font-family: 'JetBrains Mono', monospace;"
+            >
+                Enviar
+            </button>
+        </div>
+    </div>
+</form>

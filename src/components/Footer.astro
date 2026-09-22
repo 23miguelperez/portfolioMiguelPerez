@@ -1,0 +1,30 @@
+---
+const REDES = [
+    { texto: "LinkedIn", link: "https://www.linkedin.com/in/miguel-perez-123456789/" },
+    { texto: "GitHub", link: "https://github.com/miguelDev" },
+    { texto: "Instagram", link: "https://www.instagram.com/miguelDev/" }
+]
+
+const ANIO = new Date().getFullYear()
+---
+
+<footer class="w-full border-t border-white/10 py-8 px-4">
+    <div class="w-[90%] max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+
+        <div class="text-center md:text-left">
+            <p class="font-bold text-2xl" style="font-family: 'JetBrains Mono', monospace;">MP/&gt;</p>
+            <p class="text-sm opacity-60 mt-1">Desarrollador web y Diseñador gráfico de Madrid</p>
+        </div>
+
+        <div class="flex gap-6">
+            {REDES.map((red) => (
+                <a href={red.link} target="_blank" rel="noopener noreferrer" class="text-sm opacity-70 hover:opacity-100 hover:text-yellow-200 transition duration-300" style="font-family: 'JetBrains Mono', monospace;">{red.texto}</a>
+            ))}
+        </div>
+
+        <div class="text-center md:text-right">
+            <p class="text-xs opacity-50">&copy; {ANIO} Miguel Pérez.</p>
+        </div>
+
+    </div>
+</footer>

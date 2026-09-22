@@ -1,0 +1,50 @@
+---
+
+const INFORMACION = [
+{
+    titulo: "Ubicación",
+    tag:"Madrid, España",
+
+},
+{
+    titulo: "Email",
+    tag:"23miguelperz@gmail.com"
+},
+{
+    titulo:"Redes",
+    tag:[{texto:"LinkedIn", links:"https://www.linkedin.com/in/miguel-perez-123456789/"},
+        {texto:"GitHub", links:"https://github.com/miguelDev"},
+        {texto:"Instagram", links:"https://www.instagram.com/miguelDev/"}
+        ]
+}
+]
+---
+
+    {INFORMACION.map((info) => (
+        <div class="info-item my-4 px-4
+        border border-white/10 rounded-xl p-4">
+            <h3 class="text-3xl opacity-90 py-2">{info.titulo}</h3>
+
+            <div class="info-item flex flex-wrap gap-2" 
+            style="font-family: 'JetBrains Mono', monospace;">
+                {Array.isArray(info.tag) ? (
+                    info.tag.map((link) => (
+                        <a
+                            href={link.links}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="bg-sky-400/10 text-sky-300 border border-sky-400/20 text-lg px-2.5 py-1 rounded-full
+                            hover:bg-sky-200 hover:text-sky-700" 
+                            
+                        >
+                            {link.texto}
+                        </a>
+                    ))
+                )
+                : (
+                    <h4 class="text-xl border-s border-yellow-200 px-2 opacity-80">{info.tag}</h4>
+                )}
+            </div>
+        </div>
+        
+    ))}
