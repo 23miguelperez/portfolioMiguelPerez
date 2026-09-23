@@ -3,20 +3,42 @@ import Layout from '../layout/Layout.astro';
 import Experience from '../components/Experience.astro';
 import Proyectos from '../components/Proyectos.astro';
 import Contacto from '../components/contacto/Contacto.astro';
+
+const SKILLS_DEV = ["HTML5", "CSS3", "JavaScript", "Python", "PHP"]
+const SKILLS_DISENO = ["Photoshop", "Illustrator", "InDesign", "Figma", "Procreate"]
+
 ---
 
 <Layout title="Miguel Pérez" description="Desarrollador web, Ilustrador y Diseñador creativo UX/UI con amplia experiencia en el sector de las Artes Gráficas con un estilo único que aporta caracter y autenticidad a cada proyecto.">
-    <main id="inicio" class="main shadow flex flex-col items-center justify-center w-full py-20 ">
-        <div class="main-image-container relative w-full">
-            <img src="/public/images/mikiFotobaja.jpg" alt="Miguel Pérez" class="main-image w-[40%] h-[40%] md:w-[15%] md:h-[15%] object-cover mx-auto rounded-full border" />
+<main id="inicio" class="main shadow flex flex-col items-center justify-center w-full py-20 ">
+    <div class="main-image-container relative w-full">
+        <img src="/images/mikiFotobaja.jpg" alt="Miguel Pérez" class="main-image w-[40%] h-[40%] md:w-[15%] md:h-[15%] object-cover mx-auto rounded-full border" />
+    </div>
+    <div class="container text-center w-[90%] mx-auto py-2">
+        <h1 class="text-6xl font-bold py-4 opacity-90"><span class="text-primary opacity-60">¡Hola, soy </span>Miguel Pérez!</h1>
+        <h4 class="text-xl py-2 opacity-60" style="font-family: 'JetBrains Mono', monospace;"><span class="text-yellow-200">Desarrollador web, Ilustrador y 
+            Diseñador creativo UX/UI</span>,  con amplia experiencia en el sector de las  
+            <span class="text-yellow-200"> Artes Gráficas</span> con un estilo único que aporta caracter y autenticidad a cada proyecto.</h4>
+    </div>
+
+    <div class="skills-container w-[90%] mx-auto flex flex-col items-center gap-6 mt-8">
+        <div class="flex flex-wrap justify-center gap-2">
+            {SKILLS_DEV.map((skill) => (
+                <span class="bg-sky-400/10 text-sky-300 border border-sky-400/20 text-sm px-2.5 py-1 rounded-full" style="font-family: 'JetBrains Mono', monospace;">
+                    {skill}
+                </span>
+            ))}
         </div>
-        <div class="container text-center w-[90%] mx-auto py-2">
-            <h1 class="text-6xl font-bold py-4 opacity-90"><span class="text-primary opacity-60">¡Hola, soy </span>Miguel Pérez!</h1>
-            <h4 class="text-xl py-2 opacity-60" style="font-family: 'JetBrains Mono', monospace;"><span class="text-yellow-200">Desarrollador web, Ilustrador y 
-                Diseñador creativo UX/UI</span>,  con amplia experiencia en el sector de las  
-                <span class="text-yellow-200"> Artes Gráficas</span> con un estilo único que aporta caracter y autenticidad a cada proyecto.</h4>
+
+        <div class="flex flex-wrap justify-center gap-2">
+            {SKILLS_DISENO.map((skill) => (
+                <span class="bg-yellow-200/10 text-yellow-200 border border-yellow-200/20 text-sm px-2.5 py-1 rounded-full" style="font-family: 'JetBrains Mono', monospace;">
+                    {skill}
+                </span>
+            ))}
         </div>
-    </main>
+    </div>
+</main>
 	
     <section id="experiencia" >
         <div class="experiencia-section mx-auto mt-8 p-4 ">

@@ -1,14 +1,14 @@
 ---
 const REDES = [
-    { texto: "LinkedIn", link: "https://www.linkedin.com/in/miguel-perez-123456789/" },
-    { texto: "GitHub", link: "https://github.com/miguelDev" },
-    { texto: "Instagram", link: "https://www.instagram.com/miguelDev/" }
+    { texto: "LinkedIn", link: "https://www.linkedin.com/in/miguel-ángel-pérez-nieto-29809a209" },
+    { texto: "GitHub", link: "https://github.com/23miguelperez" },
+    { texto: "Instagram", link: "https://www.instagram.com/makememek/" }
 ]
 
 const ANIO = new Date().getFullYear()
 ---
 
-<footer class="w-full border-t border-white/10 py-8 px-4">
+<footer class="w-full bg-stone-900 border-t border-white/10 py-8 px-4">
     <div class="w-[90%] max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
 
         <div class="text-center md:text-left">
@@ -18,7 +18,8 @@ const ANIO = new Date().getFullYear()
 
         <div class="flex gap-6">
             {REDES.map((red) => (
-                <a href={red.link} target="_blank" rel="noopener noreferrer" class="text-sm opacity-70 hover:opacity-100 hover:text-yellow-200 transition duration-300" style="font-family: 'JetBrains Mono', monospace;">{red.texto}</a>
+                <a href={red.link} target="_blank" rel="noopener noreferrer" class="text-sm opacity-70 hover:opacity-100 transition duration-300" 
+                style="font-family: 'JetBrains Mono', monospace;">{red.texto}</a>
             ))}
         </div>
 
