@@ -41,6 +41,7 @@ const CAMPOS = [
                 {campo.type === "textarea" ? (
                     <textarea
                         id={campo.id}
+                        name={campo.id}
                         class="bg-transparent border border-white/10 text-white text-sm rounded-lg focus:ring-1 focus:ring-yellow-200 focus:border-yellow-200 block w-full px-3 py-2.5 placeholder:text-white/40 outline-none transition duration-300 resize-none"
                         placeholder={campo.placeholder}
                         rows="4"
@@ -50,6 +51,7 @@ const CAMPOS = [
                     <input
                         type={campo.type}
                         id={campo.id}
+                        name={campo.id}
                         class="bg-transparent border border-white/10 text-white text-sm rounded-lg focus:ring-1 focus:ring-yellow-200 focus:border-yellow-200 block w-full px-3 py-2.5 placeholder:text-white/40 outline-none transition duration-300"
                         placeholder={campo.placeholder}
                         required
